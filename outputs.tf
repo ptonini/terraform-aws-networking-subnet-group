@@ -1,3 +1,3 @@
 output "subnet_ids" {
-  value = module.subnets[*].this.id
+  value = [for k, v in module.subnets : v.this.id]
 }
