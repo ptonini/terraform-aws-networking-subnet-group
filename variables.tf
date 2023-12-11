@@ -6,7 +6,12 @@ variable "availability_zones" {
 
 variable "cidr_block" {}
 
-variable "vpc_id" {}
+variable "vpc" {
+  type = object({
+    id         = string
+    cidr_block = string
+  })
+}
 
 variable "subnet_newbits" {
   default = 8
